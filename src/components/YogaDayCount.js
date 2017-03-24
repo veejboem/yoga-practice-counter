@@ -1,34 +1,31 @@
-import { Component } from 'react'
 import '../stylesheets/ui.scss'
 
-export class YogaDayCount extends Component{
-  percentToDecimal(decimal) {
-    return ((decimal * 100) + '%')
+const percentToDecimal = (decimal) => {
+  return ((decimal * 100) + '%')
   }
-  calcGoalProgress(total, goal) {
-    return this.percentToDecimal(total/goal)
+
+const calcGoalProgress = (total, goal) => {
+    return percentToDecimal(total/goal)
   }
-	render() {
-		return (
+
+export const YogaDayCount = ({total, classStyle, classDuration, goal}) => (
 			<div className="yoga-day-count">
 				<div className="total-days">
-					<span>{this.props.total} Total Days of Yoga Practice</span>
+					<span>{total} Total Days of Yoga Practice</span>
 				</div>
 				<div className="class-style">
-          <span>Style: {this.props.classStyle}</span>
+          <span>Style: {classStyle}</span>
 				</div>
 				<div className="class-duration">
-          <span>{this.props.classDuration} Minutes</span>
+          <span>{classDuration} Minutes</span>
 				</div>
         <div>
           <span>
-            Goal Progress: {this.calcGoalProgress(
-              this.props.total,
-              this.props.goal
+            Goal Progress: {calcGoalProgress(
+              total,
+              goal
             )}
           </span>
         </div>
 			</div>
-		)
-	}
-}
+)
