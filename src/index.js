@@ -6,8 +6,9 @@ window.React = React
 
 render(
 	<YogaDayCount total={30}
-				 classStyle="Hatha"
-				 classDuration={45}
-				 goal={100}/>,
+				       classStyle="Hatha"
+				       classDuration={45}
+				       goal={100}
+  />,
 	document.getElementById('react-container')
 )
